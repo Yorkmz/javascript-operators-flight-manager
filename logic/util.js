@@ -10,7 +10,7 @@ function Util() {
         for (let i = 0; i < passengers.length; i++) {
             if (!Number.isNaN(Number(passengers[i]))) {
                 totalPassengers += passengers[i];
-                console.log("In If.", passengers[i], totalPassengers);
+                //console.log("In If.", passengers[i], totalPassengers);
             }
         }
         return totalPassengers;
