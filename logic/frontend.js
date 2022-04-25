@@ -13,6 +13,9 @@ function onCalculateNumberOfFlights() {
     } catch (error) {
         document.getElementById('flights').innerHTML = error; 
     } 
+    finally{
+        console.log(passengers + " / "+ capacity);
+    }
 }
 
 function onCalculateTotalFinalPrice(object) {
@@ -171,7 +174,7 @@ function onCheckAircraftRevision() {
     let coveredDistance3 = parseInt(document.getElementById("coveredDistance3").value);
     let coveredDistance4 = parseInt(document.getElementById("coveredDistance4").value);
     let coveredDistance5 = parseInt(document.getElementById("coveredDistance5").value);
-
+    console.log(coveredDistance1,coveredDistance2,coveredDistance3,coveredDistance4,coveredDistance5);
     let distancesArray = [coveredDistance1, coveredDistance2, coveredDistance3, coveredDistance4, coveredDistance5];
     try { 
         let answer = Flights().checkAircraftRevision(distanceLimit, distancesArray);
