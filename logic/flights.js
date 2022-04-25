@@ -7,8 +7,8 @@ const {
 
 function Flights() {
     function calculateNumberOfFlights(numPassengers, capFlight) {
-        console.log(numPassengers < 0);
-        console.log(!Number.isInteger(numPassengers));
+        //console.log(numPassengers < 0);
+        //console.log(!Number.isInteger(numPassengers));
         if (numPassengers < 0 || !Number.isInteger(Number(numPassengers))) {
             throw new Error("The number of passengers must be a positive integer value");
         } else
@@ -25,11 +25,11 @@ function Flights() {
     function checkAircraftRevision(distanceLimite, disArray) {
         let totalDistance = 0;
         for (let i = 0; i < disArray.length; i++) {
-            console.log("totalDis= " + totalDistance);
-            console.log("DistancesArray[" + i + "]: " + disArray[i]);
+            //console.log("totalDis= " + totalDistance);
+            //console.log("DistancesArray[" + i + "]: " + disArray[i]);
             if (!Number.isNaN(Number(disArray[i]))) {
                 totalDistance += disArray[i];
-                console.log("Ran If!");
+               // console.log("Ran If!");
             }
         }
         // console.log(totalDistance);
