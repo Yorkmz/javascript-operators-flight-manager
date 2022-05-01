@@ -15,9 +15,17 @@ function Util() {
         }
         return totalPassengers;
     }
+    function checkInput(input){
+        if ( parseFloat(input).toString() =="NaN"){
+            throw new Error("The input should not be empty");
+        }else{
+            return input;
+        }
+    }
     return {
         calculateTotalDistributedPassengers,
-        calculateTotalNumberOfPassengers
+        calculateTotalNumberOfPassengers,
+        checkInput
     };
 }
 module.exports = Util();
