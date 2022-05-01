@@ -1,10 +1,10 @@
+'use strict';
 const {
     createMochaInstanceAlreadyDisposedError
 } = require("mocha/lib/errors");
 const {
     supportsEsModules
 } = require("mocha/lib/utils");
-
 function Flights() {
     function calculateNumberOfFlights(numPassengers, capFlight) {
         //console.log(numPassengers < 0);

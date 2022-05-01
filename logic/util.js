@@ -1,3 +1,4 @@
+'use strict';
 function Util() {
     function calculateTotalDistributedPassengers(distribution) {
         let totalDistributedPassengers = 0;
@@ -22,10 +23,30 @@ function Util() {
             return Number(input);
         }
     }
+    function calculateTotalDistance(distancesArray){
+        let totalDistances = 0;
+        for(let i =0; i< distancesArray.length; i++){
+            if (distancesArray[i]>=0){
+                totalDistances +=distancesArray[i];
+            }
+        }
+        return totalDistances;
+    }
+    function calculateBonusPoints(distancesArrayWithBusiness, distancesArrayWithEconomy, businessBonus, economyBonus){
+        let totalBusinessBonus = 0;
+        let totalEconomyBonus = 0;
+        totalBusinessBonus = calculateTotalDistance(distancesArrayWithBusiness) * businessBonus/100;
+        totalEconomyBonus = calculateTotalDistance(distancesArrayWithEconomy) * economyBonus/100;
+        let totalBonus = 0;
+        totalBonus = totalBusinessBonus + totalEconomyBonus;
+        return totalBonus
+    }
     return {
         calculateTotalDistributedPassengers,
         calculateTotalNumberOfPassengers,
-        checkInput
+        checkInput,
+        calculateTotalDistance,
+        calculateBonusPoints
     };
 }
 module.exports = Util();
