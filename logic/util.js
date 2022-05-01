@@ -19,7 +19,7 @@ function Util() {
         if ( parseFloat(input).toString() =="NaN"){
             throw new Error("The input should not be empty");
         }else{
-            return input;
+            return Number(input);
         }
     }
     return {
