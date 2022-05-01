@@ -1,21 +1,21 @@
+'use strict';
 const { base } = require("mocha/lib/reporters");
 const { consoleLog } = require("mocha/lib/reporters/base");
 
 function Prices() {
     function calculateFinalPrice(basePrice, passengerType, flightType) {
-        console.log("\n****Input****\n"+basePrice,passengerType,flightType+"\n----Price Of Passenger Type----");
+        //console.log("\n****Input****\n"+basePrice,passengerType,flightType+"\n----Price Of Passenger Type----");
         let priceOfpassengerType = 0;
         let priceOfFlightType = 0;
         priceOfpassengerType = basePrice * (100 + passengerType) / 100;
-        console.log(priceOfpassengerType+"\n----Price Of Flight Type----");
+        //console.log(priceOfpassengerType+"\n----Price Of Flight Type----");
         priceOfFlightType = priceOfpassengerType * flightType / 100;
-        console.log(priceOfFlightType);
+        //console.log(priceOfFlightType);
         let finalPrice = priceOfpassengerType + priceOfFlightType;
-        console.log("\n----Final Price----\n"+Math.round(finalPrice*100)/100+"\n++++++++++++++++\n\n");
+        //console.log("\n----Final Price----\n"+Math.round(finalPrice*100)/100+"\n++++++++++++++++\n\n");
         //return finalPrice;
         return Math.round(finalPrice*100)/100;
     }
-
     function calculateDefaultFinalPrice(basePrice, passengerType, flightType) {
         //console.log(basePrice,passengerType,flightType);
         const defaultType = new Map([["vip", 5],["regular",-5],["economy",-3],["business",10]]);
