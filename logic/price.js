@@ -7,9 +7,13 @@ function Prices() {
         //console.log("\n****Input****\n"+basePrice,passengerType,flightType+"\n----Price Of Passenger Type----");
         let priceOfpassengerType = 0;
         let priceOfFlightType = 0;
-        priceOfpassengerType = basePrice * (100 + passengerType) / 100;
+        let basePriceToFloat = parseFloat(basePrice);
+        let passengerTypeToFloat = parseFloat(passengerType);
+        let flightTypeToFloat = parseFloat(flightType);
+        //console.log(basePriceToFloat,passengerTypeToFloat,flightTypeToFloat);
+        priceOfpassengerType = basePriceToFloat * (100 + passengerTypeToFloat) / 100;
         //console.log(priceOfpassengerType+"\n----Price Of Flight Type----");
-        priceOfFlightType = priceOfpassengerType * flightType / 100;
+        priceOfFlightType = priceOfpassengerType * flightTypeToFloat / 100;
         //console.log(priceOfFlightType);
         let finalPrice = priceOfpassengerType + priceOfFlightType;
         //console.log("\n----Final Price----\n"+Math.round(finalPrice*100)/100+"\n++++++++++++++++\n\n");
